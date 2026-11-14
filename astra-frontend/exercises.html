@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>ASTRA exercises and activities</title>
+<style>
+:root{--bg:#050a18;--panel:rgba(9,16,38,.8);--line:rgba(120,150,230,.22);--ink:#eaf0ff;--mute:#8fa0c9;--blue:#4a8bff;--ok:#3ddc97;--watch:#ffb020;--act:#ff4d4d}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 "Helvetica Neue",Arial,sans-serif}
+.mono{font-family:"SF Mono",Consolas,monospace}.ok{color:var(--ok)}.watch{color:var(--watch)}.act{color:var(--act)}
+header{max-width:920px;margin:0 auto;padding:22px 24px 8px}header a{color:var(--blue);text-decoration:none;font-size:14px}
+h1{font-size:26px;margin:10px 0 4px;font-weight:600}h2{font-size:20px;margin:0 0 4px}h3{font-size:16px;margin:0 0 8px}
+.m{color:var(--mute);font-size:14px;margin:0;max-width:62ch}
+#tabs{max-width:920px;margin:14px auto 0;padding:0 24px;display:flex;gap:8px;flex-wrap:wrap}
+#tabs a{display:inline-flex;gap:8px;align-items:center;border:1px solid var(--line);border-radius:4px;padding:8px 14px;color:var(--mute);text-decoration:none;font-size:15px}
+#tabs a[aria-current=page]{color:var(--ink);border-color:var(--blue);background:rgba(74,139,255,.12)}
+main{max-width:920px;margin:18px auto;padding:0 24px 60px}section[hidden]{display:none}
+.box{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:20px;margin-bottom:16px}
+.grid{display:grid;grid-template-columns:240px 1fr;gap:24px;align-items:center}@media(max-width:640px){.grid{grid-template-columns:1fr}}
+.big{font:600 44px "SF Mono",Consolas,monospace;margin:8px 0}
+.btn{background:var(--blue);color:#04112e;border:0;border-radius:4px;padding:10px 18px;font:600 15px "Helvetica Neue",Arial,sans-serif;cursor:pointer;margin:4px 8px 4px 0}
+.btn.g{background:transparent;color:var(--ink);border:1px solid var(--line)}
+:focus-visible{outline:2px solid var(--blue);outline-offset:2px}
+ol{margin:0;padding-left:20px}li{margin:6px 0}li span{color:var(--mute)}
+.orb{width:160px;height:160px;border-radius:50%;margin:16px auto;background:radial-gradient(circle,#7fb0ff,#2c5fd0);transform:scale(.6)}
+.c{text-align:center}.lab{font-size:20px;min-height:32px}
+.arena{position:relative;height:200px;border:1px solid var(--line);border-radius:6px;margin:10px 0}
+.dot{position:absolute;width:34px;height:34px;border-radius:50%;border:0;background:var(--watch);cursor:pointer}
+.fd{font-size:22px;margin:10px 0;min-height:34px}.fb{color:var(--mute);min-height:24px;margin:6px 0}
+.cab{height:90px;border-radius:6px;border:1px solid var(--line);margin:12px 0}
+input[type=range]{width:100%;accent-color:var(--blue)}
+.beat{transform-box:fill-box;transform-origin:center;animation:b var(--d,.9s) ease-in-out infinite}
+@keyframes b{50%{transform:scale(1.16)}}@media(prefers-reduced-motion:reduce){.beat{animation:none}}
+</style></head><body>
+<header><a id="back" href="index.html">Back to dashboard</a><h1>Exercises and activities</h1>
+<p class="m">General wellness activities for the areas on your dashboard. They are not medical advice. Follow your flight surgeon's plan.</p></header>
+<nav id="tabs" aria-label="Areas"></nav>
+<main>
+<section id="legs" hidden>
+<div class="box grid"><svg id="fig" viewBox="0 0 200 220" role="img" aria-label="Animated figure showing the current move"></svg>
+<div><h2 id="exn">Resistance circuit</h2><p class="m" id="exh">Four moves, 30 seconds each with 10 seconds rest. About 3 minutes.</p><div class="big" id="clock">3:00</div>
+<p class="m">Sessions this week: <b id="cnt">2</b> of 5. Saved in this browser only; the dashboard figure does not change.</p>
+<button class="btn" id="go">Start circuit</button><button class="btn g" id="lg" hidden>Log this session</button></div></div>
+<div class="box"><h3>The four moves</h3><ol id="exl"></ol></div></section>
+
+<section id="head" hidden>
+<div class="box c"><h2>Box breathing</h2><p class="m" style="margin:auto">In for 4, hold 4, out for 4, hold 4. Helps settle mood and focus.</p><div id="b1"></div></div>
+<div class="box"><h2>Focus tap</h2><div id="fo"></div></div></section>
+
+<section id="abdomen" hidden>
+<div class="box"><h2>Steady or spike?</h2><p class="m">Which gives steadier blood sugar: a general guide, not a diet plan.</p><div id="fg"></div></div>
+<div class="box"><h2>10-minute walk after a meal</h2><p class="m">A short walk after eating is a simple way to help blood sugar settle.</p><div class="big" id="wk">10:00</div><button class="btn" id="wg">Start walk</button></div></section>
+
+<section id="sleep" hidden>
+<div class="box c"><h2>4-7-8 wind-down</h2><p class="m" style="margin:auto">In for 4, hold 7, out for 8. Repeat a few rounds in bed.</p><div id="b2"></div></div>
+<div class="box"><h2>Dim the cabin lights</h2><p class="m">Aim for dim, warm light for the hour before bed. Slide to see the difference.</p><div class="cab" id="cab"></div><label>Light level <input type="range" id="lv" min="5" max="100" value="100"></label></div></section>
+
+<section id="chest" hidden>
+<div class="box grid"><svg viewBox="0 0 100 90" role="img" aria-label="Pulsing heart"><path class="beat" id="ht" d="M50 82C12 54 6 30 22 18c12-9 24-2 28 8 4-10 16-17 28-8 16 12 10 36-28 64z" fill="#ff6b7a"/></svg>
+<div><h2 id="hn">Cardio intervals</h2><p class="m" id="hh">6 rounds: 30 seconds hard, 30 seconds easy. Use a bike, rower or brisk jog. Hard should still let you speak in short phrases.</p><div class="big" id="hc">6:00</div><button class="btn" id="hg">Start intervals</button></div></div></section>
+</main>
+<script>
+const $=s=>document.querySelector(s),mmss=s=>Math.floor(s/60)+":"+String(s%60).padStart(2,"0"),RM=matchMedia("(prefers-reduced-motion:reduce)").matches;
+const T=[["legs","Bones","act","■"],["head","Mind","watch","▲"],["abdomen","Glucose","watch","▲"],["sleep","Sleep","watch","▲"],["chest","Heart","ok","●"]];
+let id=location.hash.slice(1);if(!T.some(t=>t[0]===id))id="legs";
+$("#tabs").innerHTML=T.map(t=>`<a href="#${t[0]}" ${t[0]===id?'aria-current="page"':""}><span class="${t[2]}" aria-hidden="true">${t[3]}</span>${t[1]}</a>`).join("");
+$("#tabs").onclick=e=>{if(e.target.closest("a")){setTimeout(()=>location.reload())}};
+$("#"+id).hidden=false;
+function seq(st,tick,end){let i=0,t=st[0].t;const h=setInterval(()=>{t--;if(t<0){if(++i>=st.length){clearInterval(h);end();return}t=st[i].t}tick(st[i],i,t)},1000);tick(st[0],0,t);return()=>clearInterval(h)}
+function breath(r,p){r.innerHTML='<div class="orb"></div><div class="lab" aria-live="polite">Press start</div><button class="btn">Start</button>';const o=r.children[0],l=r.children[1],b=r.children[2];let on=0,i=0,to;
+function step(){if(!on)return;const[n,s,k]=p[i++%p.length];l.textContent=n;o.style.transition=`transform ${s}s linear`;o.style.transform=`scale(${k})`;to=setTimeout(step,s*1000)}
+b.onclick=()=>{on=!on;b.textContent=on?"Stop":"Start";clearTimeout(to);if(on){i=0;step()}else{l.textContent="Press start";o.style.transition="transform .4s";o.style.transform="scale(.6)"}}}
+const init={
+legs(){const MV=[
+{n:"Squat",c:"Sit back and down, chest up, knees over your toes.",p:[[100,200,100,148,100,96,100,52,100,31,108,72,120,64],[100,200,126,152,76,146,100,106,108,86,118,112,136,104]]},
+{n:"Calf raise",c:"Rise onto your toes, pause, lower slowly.",p:[[100,200,100,148,100,96,100,52,100,31,104,76,106,100],[100,184,100,134,100,82,100,38,100,17,104,62,106,86]]},
+{n:"Hip hinge",c:"Push hips back with a flat back, then stand tall.",p:[[100,200,100,148,100,96,100,52,100,31,104,76,106,100],[100,200,100,150,76,102,120,82,142,76,122,104,122,128]]},
+{n:"Push-up",c:"Body in one line. Lower with control, press away. Knees down is fine.",p:[[30,198,70,173,110,148,150,124,172,114,150,162,150,200],[30,198,70,190,110,183,150,172,172,166,132,186,150,200]]}];
+$("#exl").innerHTML=MV.map(m=>`<li><b>${m.n}.</b> <span>${m.c}</span></li>`).join("");
+let cur=0,mode="idle",stop=null;const fig=$("#fig"),go=$("#go"),lg=$("#lg");
+function draw(m,k){const a=m.p[0],q=a.map((v,i)=>v+(m.p[1][i]-v)*k);
+fig.innerHTML=`<line x1="10" x2="190" y1="201" y2="201" stroke="#8fa0c9" opacity=".4"/><g fill="none" stroke="#eaf0ff" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"><path d="M${q[0]} ${q[1]}L${q[2]} ${q[3]}L${q[4]} ${q[5]}L${q[6]} ${q[7]}"/><path d="M${q[0]} ${q[1]}L${q[0]+14} 200"/><path stroke="#4a8bff" d="M${q[6]} ${q[7]}L${q[10]} ${q[11]}L${q[12]} ${q[13]}"/></g><circle cx="${q[8]}" cy="${q[9]}" r="10" fill="#eaf0ff"/>`}
+function loop(ts){const k=(1-Math.cos(ts/4000*2*Math.PI))/2;draw(MV[cur],mode==="rest"||(RM&&mode==="idle")?0:k);requestAnimationFrame(loop)}requestAnimationFrame(loop);
+const st=[];MV.forEach((m,i)=>{st.push({m:i,w:1,t:30});if(i<3)st.push({m:i+1,w:0,t:10})});
+function idle(msg){mode="idle";go.textContent="Start circuit";if(msg){$("#exn").textContent="Circuit complete";$("#exh").textContent="Log it to count it this week.";lg.hidden=false}}
+go.onclick=()=>{if(stop){stop();stop=null;idle();$("#exn").textContent="Resistance circuit";return}lg.hidden=true;go.textContent="Stop";
+stop=seq(st,(s,i,t)=>{cur=s.m;mode=s.w?"work":"rest";$("#exn").textContent=s.w?MV[s.m].n:"Rest. Next: "+MV[s.m].n;$("#exh").textContent=s.w?MV[s.m].c:"Shake out your arms and breathe.";$("#clock").textContent=mmss(t)},()=>{stop=null;idle(1)})};
+let n=2;try{n=+localStorage.astraSessions||2}catch(e){}$("#cnt").textContent=n;
+lg.onclick=()=>{n++;try{localStorage.astraSessions=n}catch(e){}$("#cnt").textContent=n;lg.hidden=true}},
+head(){breath($("#b1"),[["Breathe in",4,1],["Hold",4,1],["Breathe out",4,.6],["Hold",4,.6]]);
+const r=$("#fo");r.innerHTML='<p class="m">Tap each dot as soon as it appears. 8 taps.</p><div class="arena"></div><p class="fb">Press start</p><button class="btn">Start</button>';
+const ar=r.children[1],fb=r.children[2];let n=0,tot=0,t0;
+function next(){ar.innerHTML="";if(n===8){fb.textContent=`Average reaction: ${Math.round(tot/8)} ms`;return}
+setTimeout(()=>{const d=document.createElement("button");d.className="dot";d.setAttribute("aria-label","Tap");d.style.left=Math.random()*88+"%";d.style.top=Math.random()*78+"%";t0=performance.now();d.onclick=()=>{tot+=performance.now()-t0;n++;fb.textContent=n+" of 8";next()};ar.appendChild(d)},400+Math.random()*800)}
+r.children[3].onclick=()=>{n=0;tot=0;next()}},
+abdomen(){const F=[["Oatmeal with nuts","s"],["Soda","p"],["Lentil soup","s"],["White bread with jam","p"],["Grilled chicken and vegetables","s"],["Candy bar","p"],["Apple with peanut butter","s"],["Fruit juice","p"]];
+(function play(){const q=F.slice().sort(()=>Math.random()-.5).slice(0,6),r=$("#fg");let i=0,sc=0;
+r.innerHTML='<div class="fd"></div><div><button class="btn" data-a="s">Steady energy</button><button class="btn g" data-a="p">Quick spike</button></div><p class="fb" aria-live="polite"></p>';
+const fd=r.children[0],fb=r.children[2];fd.textContent=q[0][0];
+r.children[1].onclick=e=>{const a=e.target.dataset.a;if(!a)return;const ok=a===q[i][1];sc+=ok;fb.textContent=ok?"Right.":"Not quite. That one gives "+(q[i][1]==="s"?"steady energy.":"a quick spike.");i++;
+if(i===q.length){fd.textContent=`You got ${sc} of ${q.length}`;r.children[1].innerHTML='<button class="btn">Play again</button>';r.children[1].onclick=play}else fd.textContent=q[i][0]}})();
+let s=null;$("#wg").onclick=()=>{if(s){s();s=null;$("#wg").textContent="Start walk";$("#wk").textContent="10:00";return}$("#wg").textContent="Stop";
+s=seq([{t:600}],(x,i,t)=>$("#wk").textContent=mmss(t),()=>{s=null;$("#wk").textContent="Done";$("#wg").textContent="Start walk"})}},
+sleep(){breath($("#b2"),[["Breathe in",4,1],["Hold",7,1],["Breathe out",8,.6]]);
+$("#lv").oninput=e=>{const v=e.target.value;$("#cab").style.background=`rgb(${v*2.3},${v*1.9},${v*1.3})`};$("#lv").oninput({target:$("#lv")})},
+chest(){let s=null;const g=$("#hg"),ht=$("#ht"),st=[];for(let i=0;i<6;i++)st.push({w:1,t:30},{w:0,t:30});
+g.onclick=()=>{if(s){s();s=null;g.textContent="Start intervals";ht.style.setProperty("--d",".9s");$("#hn").textContent="Cardio intervals";$("#hc").textContent="6:00";return}g.textContent="Stop";
+s=seq(st,(x,i,t)=>{$("#hn").textContent=(x.w?"Hard":"Easy")+". Round "+(Math.floor(i/2)+1)+" of 6";ht.style.setProperty("--d",x.w?".45s":".9s");$("#hc").textContent=mmss(t)},()=>{s=null;g.textContent="Start intervals";$("#hn").textContent="Intervals complete";ht.style.setProperty("--d",".9s")})}}};
+init[id]();
+try{if(sessionStorage.astraBack==="results"&&sessionStorage.astraV){const a=$("#back");a.href="index.html#results";a.textContent="Back to body report"}}catch(e){}
+</script></body></html>
