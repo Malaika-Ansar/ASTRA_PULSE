@@ -12,7 +12,7 @@
 #imgwrap{position:absolute;left:0;top:0;transform-origin:50% 100%;will-change:transform,opacity;opacity:0}
 #imgwrap img{display:block;width:100%;height:100%;user-select:none;-webkit-user-drag:none}
 .vig{position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse at 50% 45%,transparent 55%,rgba(0,0,0,.55))}
-#fade{position:absolute;inset:0;pointer-events:none;background:linear-gradient(rgba(5,10,24,0),var(--bg) 85%);opacity:0}
+#fade{position:absolute;inset:0;pointer-events:none;background:var(--bg);opacity:0}
 #hero{position:absolute;inset:0;display:grid;place-content:center;text-align:center;padding:0 24px;pointer-events:none}
 #hero h1{margin:0;font-weight:200;font-size:clamp(52px,10vw,132px);letter-spacing:.32em;text-indent:.32em;line-height:1}
 #hero p{margin:18px 0 0;color:var(--mute);font-size:clamp(14px,1.6vw,18px)}
@@ -127,7 +127,31 @@ footer{max-width:1120px;margin:0 auto;padding:10px 24px 34px;font-size:12px;colo
 #nasa details{margin-top:8px}#nasa summary{cursor:pointer;color:#9db8ff;font-size:14px}
 #nasa .an{font-family:'Bricolage Grotesque','Avenir Next',sans-serif;font-size:19px;font-weight:700;color:var(--ink)}#nasa .nh b{font-size:14px}#nasa .sb{margin-top:10px;padding-top:10px;border-top:1px solid rgba(120,150,230,.15)}#nasa .tg{display:inline-block;margin-left:10px;font:12px 'Atkinson Hyperlegible',sans-serif;color:var(--mute);border:1px solid var(--line);border-radius:20px;padding:1px 9px;vertical-align:middle}#nasa .fine2{margin-top:10px;font-size:14px;color:#aab8dc}#nasa .src{font-size:13px;color:var(--mute);line-height:1.5}#nasa a{color:#9db8ff}
 #rp .mh{font-size:18px;font-weight:600;margin:6px 0 2px}#rp .mb{font-size:15px;line-height:1.55;color:#cdd8f2;margin:2px 0}
-#rp details{margin-top:6px}#rp summary{cursor:pointer;color:#9db8ff;font-size:13px}#rp .src{font-size:12.5px;color:var(--mute);line-height:1.5;margin:4px 0}#rp a{color:#9db8ff}</style><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Bricolage+Grotesque:wght@600;700&display=swap" rel="stylesheet"></head><body>
+#rp details{margin-top:6px}#rp summary{cursor:pointer;color:#9db8ff;font-size:13px}#rp .src{font-size:12.5px;color:var(--mute);line-height:1.5;margin:4px 0}#rp a{color:#9db8ff}/* intro block between hero and dashboard */
+.intro{padding:clamp(56px,10vh,96px) 0 0;margin-bottom:28px}
+.intro .eyebrow{display:block;color:var(--blue);font-size:13px;letter-spacing:.14em;text-transform:uppercase;margin-bottom:10px}
+.intro h2{margin:0;font-weight:300;font-size:clamp(26px,4vw,40px);line-height:1.1}
+.intro .sub{margin:12px 0 0;max-width:640px}
+#crewbox{margin-bottom:28px}
+/* crew panel + prediction module (added) */
+.badge.none{color:var(--mute)}
+.crew{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:12px;margin-top:10px}
+.cm{border:1px solid var(--line);border-radius:12px;padding:14px;background:rgba(255,255,255,.03);cursor:pointer}
+.cm.cur{border-color:var(--blue);box-shadow:0 0 0 1px var(--blue) inset}
+.cm .cmh{display:flex;justify-content:space-between;align-items:center;gap:8px}.cm .cmh b{font-weight:500;font-size:17px}
+.cm ul{margin:8px 0 0;padding-left:18px;font-size:13px;color:#b8c5e6;display:grid;gap:3px}
+.cm .cmb{display:flex;gap:8px;margin-top:12px;flex-wrap:wrap}.cm .btn{padding:7px 12px;font-size:14px}
+.cmsum{font-size:13px;color:var(--mute);margin:2px 0 0}
+#pred h3{margin:0 0 4px}.pd-int{margin:6px 0 10px;padding-left:18px;color:#c6d2ee;font-size:14px;display:grid;gap:4px}
+.pd-a{margin-top:14px;border-top:1px solid var(--line);padding-top:10px}.pd-a>b{font-weight:500}
+.pd-r{margin:10px 0;padding:10px 12px;border:1px solid var(--line);border-radius:10px;background:rgba(255,255,255,.03)}
+.pd-h{display:flex;flex-wrap:wrap;gap:8px;align-items:baseline}.pd-h b{font-weight:500}
+.pd-p{margin:4px 0 6px;font-size:14px;color:#dbe5ff}
+.pd-c{margin-top:8px;padding-top:8px;border-top:1px dashed var(--line)}.pd-c p{margin:4px 0 0;font-size:13px;color:#b8c5e6}
+.pd-t{display:flex;flex-wrap:wrap;gap:6px;align-items:center}.pd-t .tg{font-size:12px;color:var(--mute)}
+.pd-n{margin-top:6px;font-size:12px;color:var(--mute)}.pd-n p{margin:4px 0}
+.pd-f{margin-top:10px;font-size:12px;color:var(--mute)}
+</style><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Bricolage+Grotesque:wght@600;700&display=swap" rel="stylesheet"></head><body>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true"><filter id="dim" color-interpolation-filters="sRGB"><feColorMatrix type="saturate" values=".4"/><feColorMatrix type="matrix" values=".62 0 0 0 0  0 .70 0 0 0  0 0 .88 0 0  0 0 0 1 0"/></filter></svg>
 <div id="nav"><button id="brand" type="button"><b>ASTRA</b></button><span><span class="mono">Mission day 142 · <span id="met">142:00:00:00</span></span><button id="startnav" class="start" type="button">Start measuring</button><button id="hbtn" class="start" type="button" hidden>Home</button></span></div>
 <div id="home"><div id="track"><div id="stage">
@@ -141,7 +165,8 @@ footer{max-width:1120px;margin:0 auto;padding:10px 24px 34px;font-size:12px;colo
  <div id="fade"></div>
 </div></div>
 <main id="content">
-<div class="box ready"><div><h2 style="margin:0;font-weight:300;font-size:clamp(26px,4vw,40px)">Ready for today's measurements?</h2><p class="sub" style="margin:8px 0 0">Nine quick checks, about eight minutes: heart and blood pressure, breathing, glucose, temperature, sleep, mood and fatigue, motion sickness, cabin air, and exercise.</p></div><button class="cta" id="cta" type="button">Start full-body measurement</button></div>
+<header class="intro"><span class="eyebrow">Daily check-in</span><h2>Ready for today's measurements?</h2><p class="sub">Nine quick checks, about eight minutes: heart and blood pressure, breathing, glucose, temperature, sleep, mood and fatigue, motion sickness, cabin air, and exercise. Choose a crew member below to begin.</p></header>
+<div class="box" id="crewbox"></div>
 <div class="top"><div class="ring"><svg viewBox="0 0 120 120"><circle cx="60" cy="60" r="52" fill="none" stroke="rgba(120,150,230,.2)" stroke-width="9"/><circle id="arc" cx="60" cy="60" r="52" fill="none" stroke="var(--watch)" stroke-width="9" stroke-linecap="round" stroke-dasharray="327" stroke-dashoffset="327"/></svg><b id="score" class="mono">0<small>of 100</small></b></div><div><h2>Your last results</h2><p id="sum"></p></div></div>
 <div class="grid" id="cards"></div>
 <div class="box" style="margin-top:16px"><h3>Mood and fatigue over the mission</h3><p>Last 12 weeks, sample data</p><svg id="chart" viewBox="0 0 600 220" role="img" aria-label="Mood falling and fatigue rising over 12 weeks"></svg><div class="lg"><span style="color:#7fb0ff">● Mood (higher is better)</span><span style="color:#ffb020">● Fatigue (lower is better)</span></div></div>
@@ -150,7 +175,7 @@ footer{max-width:1120px;margin:0 auto;padding:10px 24px 34px;font-size:12px;colo
 <div id="app" hidden>
 <section class="view" id="v-measure" hidden><div class="wrap"><div class="prog"><i id="progbar"></i></div><div id="mbody"></div></div></section>
 <section class="view" id="v-analyze" hidden><div class="wrap center"><div class="spin"></div><h2>Running analysis</h2><p class="sub" id="ap" style="margin:0 auto 18px"></p><div class="prog" style="max-width:360px;margin:0 auto"><i id="aprog"></i></div></div></section>
-<section class="view" id="v-results" hidden><div class="wrap"><div class="crumb">Analysis complete</div><h2>Your body report</h2><p class="sub" id="rs"></p><div class="res"><div id="fwrap"><div class="afig"><div class="aglow"></div><div class="adisc"></div><img id="astroimg" src="assets/astronaut.png" alt="Astronaut standing, front view, holding a helmet. Body areas are clickable." draggable="false"><svg id="azones" viewBox="0 0 266 540" role="group" aria-label="Body areas"><path d="M58 300 L186 300 L196 515 L42 515 Z" class="zone" data-zone="legs" tabindex="0" role="button" aria-label="Bones and legs"/><path d="M62 228 L184 228 L186 300 L60 300 Z" class="zone" data-zone="abdomen" tabindex="0" role="button" aria-label="Abdomen"/><path d="M62 92 L184 92 L182 228 L64 228 Z" class="zone" data-zone="chest" tabindex="0" role="button" aria-label="Chest and heart"/><path d="M10 96 L62 92 L74 215 L62 268 L46 308 L14 302 L8 235 Z" class="zone" data-zone="skin" tabindex="0" role="button" aria-label="Arms, skin and whole body"/><path d="M184 92 L228 140 L224 232 L212 290 L184 290 L180 225 Z" class="zone" data-zone="skin" tabindex="0" role="button" aria-label="Arms, skin and whole body"/><ellipse cx="125" cy="55" rx="46" ry="54" class="zone" data-zone="head" tabindex="0" role="button" aria-label="Head and brain"/><circle class="zd" data-zone="head" cx="125" cy="48" r="4"/><circle class="zp" cx="125" cy="48" r="4"/><circle class="zd" data-zone="chest" cx="124" cy="150" r="4"/><circle class="zp" cx="124" cy="150" r="4"/><circle class="zd" data-zone="abdomen" cx="122" cy="262" r="4"/><circle class="zp" cx="122" cy="262" r="4"/><circle class="zd" data-zone="skin" cx="36" cy="185" r="4"/><circle class="zp" cx="36" cy="185" r="4"/><circle class="zd" data-zone="legs" cx="120" cy="410" r="4"/><circle class="zp" cx="120" cy="410" r="4"/></svg></div></div><div><div class="box" id="rp"></div><div id="attn" style="margin-top:12px;display:flex;gap:8px;flex-wrap:wrap"></div><div class="box" id="nasa" style="margin-top:12px"></div><div class="nav2"><button class="btn" id="again" type="button">Measure again</button><button class="btn" id="home2" type="button">Back to home</button></div></div></div></div></section>
+<section class="view" id="v-results" hidden><div class="wrap"><div class="crumb">Analysis complete</div><h2>Your body report</h2><p class="sub" id="rs"></p><div class="res"><div id="fwrap"><div class="afig"><div class="aglow"></div><div class="adisc"></div><img id="astroimg" src="assets/astronaut.png" alt="Astronaut standing, front view, holding a helmet. Body areas are clickable." draggable="false"><svg id="azones" viewBox="0 0 266 540" role="group" aria-label="Body areas"><path d="M58 300 L186 300 L196 515 L42 515 Z" class="zone" data-zone="legs" tabindex="0" role="button" aria-label="Bones and legs"/><path d="M62 228 L184 228 L186 300 L60 300 Z" class="zone" data-zone="abdomen" tabindex="0" role="button" aria-label="Abdomen"/><path d="M62 92 L184 92 L182 228 L64 228 Z" class="zone" data-zone="chest" tabindex="0" role="button" aria-label="Chest and heart"/><path d="M10 96 L62 92 L74 215 L62 268 L46 308 L14 302 L8 235 Z" class="zone" data-zone="skin" tabindex="0" role="button" aria-label="Arms, skin and whole body"/><path d="M184 92 L228 140 L224 232 L212 290 L184 290 L180 225 Z" class="zone" data-zone="skin" tabindex="0" role="button" aria-label="Arms, skin and whole body"/><ellipse cx="125" cy="55" rx="46" ry="54" class="zone" data-zone="head" tabindex="0" role="button" aria-label="Head and brain"/><circle class="zd" data-zone="head" cx="125" cy="48" r="4"/><circle class="zp" cx="125" cy="48" r="4"/><circle class="zd" data-zone="chest" cx="124" cy="150" r="4"/><circle class="zp" cx="124" cy="150" r="4"/><circle class="zd" data-zone="abdomen" cx="122" cy="262" r="4"/><circle class="zp" cx="122" cy="262" r="4"/><circle class="zd" data-zone="skin" cx="36" cy="185" r="4"/><circle class="zp" cx="36" cy="185" r="4"/><circle class="zd" data-zone="legs" cx="120" cy="410" r="4"/><circle class="zp" cx="120" cy="410" r="4"/></svg></div></div><div><div class="box" id="rp"></div><div id="attn" style="margin-top:12px;display:flex;gap:8px;flex-wrap:wrap"></div><div class="box" id="nasa" style="margin-top:12px"></div><div class="box" id="pred" style="margin-top:12px"></div><div class="nav2"><button class="btn" id="again" type="button">Measure again</button><button class="btn" id="home2" type="button">Back to home</button></div></div></div></div></section>
 <section class="view" id="v-action" hidden><div class="wrap" id="abody"></div></section>
 </div>
 <script>
@@ -206,7 +231,9 @@ const MOVES=[{n:"Arm raises",t:"Raise both arms overhead, then lower them slowly
 const LAB={ok:"Normal",watch:"Watch",act:"Action needed"},RANK={ok:0,watch:1,act:2},NM=["ok","watch","act"];
 const V={},done={};let st=0,homeY=0,curZ="head",G=null,gi=null;
 /* ---------- ASTRA backend link + conclusion: NASA-JSON rules where they exist, built-in ranges elsewhere, all in plain words ---------- */
-const API="http://127.0.0.1:8000";
+const QS=new URLSearchParams(location.search);
+const API=QS.get("api")||(location.protocol.startsWith("http")&&location.port==="8000"?location.origin:"http://127.0.0.1:8000");
+const MDAY=parseInt(QS.get("day")||"142",10),MPHASE=QS.get("phase")||"inflight";
 const BK={hr:["crew","resting_hr_bpm"],sys:["crew","systolic_mmHg"],dia:["crew","diastolic_mmHg"],rr:["crew","resp_rate_bpm"],spo2:["crew","spo2_pct"],sleep:["crew","sleep_hours"],fat:["crew","fatigue_0_100"],co2:["crew","co2_mmHg"],sms:["motion_sickness","severity_0_3"],temp:["body_temperature","core_temp_rest_c"]};
 const A={},ZO={},AX={ok:false,err:"",reports:[],src:{},labels:{}};
 const SC={fat:.1},fmt=n=>Math.round(n*10)/10;
@@ -216,15 +243,35 @@ Object.assign(R,{rr:{name:"Breathing rate",unit:"breaths/min",n:[12,20],w:[8,25]
 STEPS.splice(1,0,{title:"Breathing and oxygen",why:"Cabin air and fluid shifts can change how you breathe.",how:["Sit quietly for 2 minutes.","Count your breaths for one minute (one in and out is one breath).","Clip the oxygen sensor on a fingertip and wait for a steady number."],f:[{k:"rr",label:"Breathing rate",unit:"breaths/min",min:4,max:60,v:14},{k:"spo2",label:"Blood oxygen (SpO2)",unit:"%",min:50,max:100,v:97}]});
 STEPS.splice(6,0,{title:"Motion sickness",why:"Many crew feel queasy or dizzy when moving their head in weightlessness.",how:["0 means nothing at all.","1 is mild: slightly queasy, no effect on work.","2 is moderate: several symptoms that do not go away.","3 is severe: hard to work."],f:[{k:"sms",label:"Motion sickness",unit:"0 to 3",min:0,max:3,v:0,r:1}]},{title:"Cabin air (CO2)",why:"Too much carbon dioxide in the cabin can cause headaches and poor sleep.",how:["Read the cabin CO2 monitor.","Use today's average if it shows one."],f:[{k:"co2",label:"Cabin CO2",unit:"mmHg",min:0,max:30,v:2,step:.1}]});
 ZN.chest.ms.push("rr","spo2");ZN.head.ms.push("sms","co2");
-async function post(group,values){const r=await fetch(API+"/record",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({subject_id:"me",group:group,phase:"inflight",mission_day:142,include_uncited_defaults:true,values:values})});if(!r.ok)throw new Error("HTTP "+r.status);return r.json()}
-function digest(f){const rs=f.reasons||[];let top=null;for(const r of rs){if(RANK[r.status]===undefined)continue;if(!top||RANK[r.status]>RANK[top.status]||(RANK[r.status]===RANK[top.status]&&top.type==="note"&&r.type!=="note"))top=r}
-return{status:RANK[f.status]!==undefined?f.status:"ok",msg:top?top.message:"",action:(top&&top.action)||"",type:top?top.type:"",rule:(top&&top.rule)||"",base:(top&&top.baseline)||null,src:[...new Set(rs.flatMap(r=>r.sources||[]))],pending:rs.filter(r=>r.status==="no_reference").map(r=>r.message)}}
+async function post(group,values){const readings={};for(const k in values){if(values[k]!=null&&!isNaN(values[k]))readings[k]=values[k]}
+const r=await fetch(API+"/check",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({subject_id:CUR.id,group:group,day:MDAY,phase:MPHASE,readings:readings,include_uncited:true})});
+if(!r.ok){let d="";try{const j=await r.json();d=typeof j.detail==="string"?j.detail:JSON.stringify(j.detail)}catch(e){}throw new Error("HTTP "+r.status+(d?": "+d:""))}return r.json()}
+/* turn the backend's /check answer into the per-reading summary the page draws */
+const cdf=z=>{const t=1/(1+.2316419*Math.abs(z)),d=.3989423*Math.exp(-z*z/2),p=d*t*(.3193815+t*(-.3565638+t*(1.781478+t*(-1.821256+t*1.330274))));return z>0?1-p:p};
+function toReasons(ind){const R2=[],cs=ind.checks||[];
+for(const c of cs){const t=c.check;let type=t.startsWith("cited:")?"nasa_rule":t.startsWith("window:")?"window_rule":t.startsWith("generic:")?"uncited_default":t==="personal_baseline"?null:t==="cohort_reference"?null:t==="label"?"your_label":"nasa_rule";if(!type)continue;
+R2.push({type:type,status:c.status,message:c.message,action:c.action,rule:t.replace(/^(cited|window|generic):/,""),sources:c.sources||[]})}
+const cr=ind.cohort_reference;if(cr&&cr.applies&&cr.z!=null)R2.push({type:"nasa_reference",status:cr.info_only?"":(cr.status||"ok"),message:cr.message,z:cr.z,percentile:Math.round(cdf(cr.z)*100),sources:cr.sources||[]});
+if(cr&&cr.landing_day_context)R2.push({type:"nasa_context",status:"ok",message:cr.landing_day_context});
+const pb=ind.personal_baseline;if(pb&&pb.scored)R2.push({type:"personal_baseline",status:pb.status,message:pb.message,baseline:{days:pb.n,mean:pb.mean,sd:pb.sd,z:pb.z}});
+else if(pb)R2.push({type:"note",status:"no_reference",message:pb.reason||"Not enough history for a personal comparison."});
+for(const u of ind.not_scored||[])if(u.check!=="personal_baseline")R2.push({type:"note",status:"no_reference",message:u.message});
+const ph=ind.phase_shift_info;if(ph&&ph.message)R2.push({type:"nasa_delta",status:"ok",message:ph.message,sources:ph.sources||[]});
+for(const n of ind.notes||[])R2.push({type:"note",status:"ok",message:n});
+return R2}
+function toFinding(ind){const cs=ind.checks||[];let top=null;for(const c of cs){if(RANK[c.status]===undefined)continue;if(!top||RANK[c.status]>RANK[top.status])top=c}
+const kind=c=>!c?"note":c.check.startsWith("cited:")||c.check.startsWith("window:")?"cited":c.check.startsWith("generic:")?"uncited_default":c.check==="personal_baseline"?"personal_baseline":c.check;
+const pb=ind.personal_baseline;
+return{status:top?top.status:"ok",type:kind(top),rule:top?top.check.replace(/^(cited|window|generic):/,""):"",message:top?top.message:"",action:(top&&top.action)||"",
+base:pb&&pb.scored?{mean:pb.mean,sd:pb.sd}:null,sources:[...new Set(cs.flatMap(c=>c.sources||[]))],pending:(ind.not_scored||[]).map(u=>u.message)}}
+function digest(f){return{status:RANK[f.status]!==undefined?f.status:"ok",msg:f.message,action:f.action,type:f.type,rule:f.rule,base:f.base,src:f.sources,pending:f.pending}}
 async function askBackend(){for(const k in A)delete A[k];for(const k in ZO)delete ZO[k];AX.ok=false;AX.err="";AX.reports=[];AX.src={};AX.labels={};
 try{const c=await post("crew",{resting_hr_bpm:V.hr,systolic_mmHg:V.sys,diastolic_mmHg:V.dia,resp_rate_bpm:V.rr,spo2_pct:V.spo2,sleep_hours:V.sleep,fatigue_0_100:V.fat*10,co2_mmHg:V.co2});
 const m=await post("motion_sickness",{severity_0_3:V.sms});
 const t=await post("body_temperature",{core_temp_rest_c:V.temp});
-AX.reports=[c,m,t];const by={};
-for(const rep of AX.reports){Object.assign(AX.src,rep.sources||{});for(const f of rep.findings||[]){by[rep.group+"|"+f.indicator]=f;AX.labels[f.indicator]=f.label}}
+AX.reports=[c,m,t].map(rep=>({group:rep.group,notices:rep.notes||[],unrecognized_fields:[],compound_findings:rep.predictions||[],
+findings:Object.entries(rep.indicators||{}).map(([iid,ind])=>({indicator:iid,label:ind.label,reasons:toReasons(ind)}))}));const by={};
+for(const rep of[c,m,t]){Object.assign(AX.src,rep.sources||{});for(const iid in rep.indicators||{}){const ind=rep.indicators[iid];by[rep.group+"|"+iid]=toFinding(ind);AX.labels[iid]=ind.label}}
 for(const k in BK){const f=by[BK[k][0]+"|"+BK[k][1]];if(f)A[k]=digest(f)}
 const cf=c.compound_findings||[];if(cf.length)ZO.head=cf.reduce((a,x)=>RANK[x.status]>RANK[a]?x.status:a,"ok");
 AX.ok=true;try{sessionStorage.astraA=JSON.stringify({A:A,ZO:ZO,AX:AX})}catch(e){}}
@@ -304,11 +351,11 @@ S.f.forEach(f=>{const i=$("#i_"+f.k);i.oninput=()=>{V[f.k]=parseFloat(i.value);i
 $("#bk").onclick=()=>{st--;step()};
 $("#nx").onclick=()=>{for(const f of S.f){const v=V[f.k];if(isNaN(v)||v<f.min||v>f.max){$("#err").textContent=`Enter ${f.label.toLowerCase()} between ${f.min} and ${f.max}.`;return}}if(st<STEPS.length-1){st++;step()}else analyze()}}
 function analyze(){const call=askBackend();show("v-analyze");$("#progbar").style.width="100%";const msg=["Checking heart and blood pressure…","Comparing glucose and temperature…","Reviewing sleep, mood and fatigue…","Scoring bone health…","Building your body report…"];let i=0;$("#aprog").style.width="0";
-const t=()=>{$("#ap").textContent=msg[i];$("#aprog").style.width=((i+1)/msg.length*100)+"%";i++;if(i>=msg.length){clearInterval(iv);call.then(()=>setTimeout(()=>results(),600))}};const iv=setInterval(t,600);t()}
+const t=()=>{$("#ap").textContent=msg[i];$("#aprog").style.width=((i+1)/msg.length*100)+"%";i++;if(i>=msg.length){clearInterval(iv);call.then(()=>{saveCrew();setTimeout(()=>results(),600)})}};const iv=setInterval(t,600);t()}
 function bar(k){const r=R[k],lo=r.w[0]-(r.w[1]-r.w[0])*.3,hi=r.w[1]+(r.w[1]-r.w[0])*.3,p=x=>Math.min(100,Math.max(0,(x-lo)/(hi-lo)*100));return `<div class="bar" aria-hidden="true"><div class="n" style="left:${p(r.n[0])}%;width:${p(r.n[1])-p(r.n[0])}%"></div><div class="mk" style="left:${p(V[k])}%"></div></div>`}
 function results(z){show("v-results");const zs=Object.keys(ZN),bad=zs.filter(k=>zst(k)!=="ok");
 $("#rs").textContent=bad.length?`${bad.length} of ${zs.length} areas are outside the normal range. Tap a body area to see why.`:"All areas are within the normal range. Tap a body area for details.";
-document.querySelectorAll("#fwrap .zone").forEach(e=>{e.classList.remove("s-ok","s-watch","s-act");e.classList.add("s-"+zst(e.dataset.zone))});document.querySelectorAll("#fwrap .zd,#fwrap .zp").forEach(e=>{const z=e.dataset.zone||e.previousElementSibling.dataset.zone;e.classList.remove("s-ok","s-watch","s-act");e.classList.add("s-"+zst(z))});try{sessionStorage.astraV=JSON.stringify(V)}catch(e){}nasaBox();
+document.querySelectorAll("#fwrap .zone").forEach(e=>{e.classList.remove("s-ok","s-watch","s-act");e.classList.add("s-"+zst(e.dataset.zone))});document.querySelectorAll("#fwrap .zd,#fwrap .zp").forEach(e=>{const z=e.dataset.zone||e.previousElementSibling.dataset.zone;e.classList.remove("s-ok","s-watch","s-act");e.classList.add("s-"+zst(z))});try{sessionStorage.astraV=JSON.stringify(V);sessionStorage.astraWho=CUR.id}catch(e){}nasaBox();predBox();document.querySelector("#v-results .crumb").textContent="Analysis complete · "+CUR.name;
 $("#attn").innerHTML=zs.map(k=>`<button class="tile" type="button" data-z="${k}" aria-pressed="false"><span><i class="${zst(k)}">${ICON[zst(k)]}</i>${D[k].short}</span><b class="mono">${V[TV[k]]}</b></button>`).join("");
 $("#attn").querySelectorAll("button").forEach(b=>b.onclick=()=>pick(b.dataset.z));pick(z||bad[0]||"head")}
 const TV={head:"fat",chest:"hr",abdomen:"glu",skin:"temp",legs:"ex"},MT={mood:"head",fat:"head",sleep:"sleep",hr:"chest",sys:"chest",dia:"chest",glu:"abdomen",ex:"legs"};
@@ -332,9 +379,60 @@ function tick(){if(G.pause)return;G.t+=.25;const r=Math.floor(G.t/3);if(r>G.reps
 if(G.t>=15){next();return}$("#gt").textContent=Math.ceil(15-G.t);$("#gring").style.strokeDashoffset=440*(1-G.t/15);$("#gr").textContent=G.reps+" / 5";$("#gp").textContent=G.pts}
 function next(){G.i++;G.t=0;G.reps=0;if(G.i>=MOVES.length){stopG();fin();return}game()}
 function fin(){$("#abody").innerHTML=`<div class="crumb">Session complete</div><h2>Nice work. +${G.pts} points</h2><p class="sub">You finished all ${MOVES.length} moves. Log this session to update your bone health plan.</p><div class="nav2"><button class="btn" id="back" type="button">Discard</button><button class="btn p" id="dn" type="button">Log session and return</button></div>`;$("#back").onclick=()=>results("legs");$("#dn").onclick=()=>{done.legs=true;results("legs")}}
+/* ---------- three crew members (names are editable here) ---------- */
+const CREW=[{id:"crew1",name:"Crew 1"},{id:"crew2",name:"Crew 2"},{id:"crew3",name:"Crew 3"}];
+let CUR=CREW[0];try{CUR=CREW.find(c=>c.id===localStorage.astraCur)||CREW[0]}catch(e){}
+function loadAll(){try{return JSON.parse(localStorage.astraCrewData||"{}")}catch(e){return{}}}
+function saveAll(o){try{localStorage.astraCrewData=JSON.stringify(o)}catch(e){}}
+function clearState(){for(const k in V)delete V[k];for(const k in A)delete A[k];for(const k in ZO)delete ZO[k];AX.ok=false;AX.err="";AX.reports=[];AX.src={};AX.labels={}}
+function loadState(d){clearState();if(!d)return;Object.assign(V,d.V||{});Object.assign(A,d.A||{});Object.assign(ZO,d.ZO||{});const x=d.AX||{};AX.ok=!!x.ok;AX.err=x.err||"";AX.reports=x.reports||[];AX.src=x.src||{};AX.labels=x.labels||{}}
+function setCrew(id){CUR=CREW.find(c=>c.id===id)||CUR;try{localStorage.astraCur=CUR.id}catch(e){}loadState(loadAll()[CUR.id]);renderCrew()}
+function saveCrew(){const zs=Object.keys(ZN);let o="ok";for(const z of zs)if(RANK[zst(z)]>RANK[o])o=zst(z);
+const c=[];for(const z of zs)for(const k of ZN[z].ms){const s=mst(k);if(s!=="ok")c.push({s:s,t:R[k].name+": "+P(k).h})}c.sort((a,b)=>RANK[b.s]-RANK[a.s]);
+const all=loadAll();all[CUR.id]={ts:Date.now(),V:Object.assign({},V),A:Object.assign({},A),ZO:Object.assign({},ZO),AX:AX,sum:{o:o,c:c.slice(0,3)}};saveAll(all);renderCrew()}
+function renderCrew(){const b=$("#crewbox");if(!b)return;const all=loadAll(),done=CREW.filter(c=>all[c.id]),need=done.filter(c=>all[c.id].sum.o==="act").length,watch=done.filter(c=>all[c.id].sum.o==="watch").length;
+b.innerHTML=`<h3>Crew</h3><p class="cmsum">${done.length} of ${CREW.length} crew members measured${done.length?`: ${need} need action, ${watch} on watch.`:"."} Tap a card to choose who is measuring. Each person keeps their own history and 7-day comparison.</p><div class="crew">${CREW.map(c=>{const d=all[c.id],s=d&&d.sum.o;
+return `<div class="cm ${c.id===CUR.id?"cur":""}" data-id="${c.id}"><div class="cmh"><b>${esc(c.name)}</b>${s?`<span class="badge ${s}">${ICON[s]} ${LAB[s]}</span>`:`<span class="badge none">Not measured</span>`}</div><div class="rg">${d?"Last measured "+esc(new Date(d.ts).toLocaleString()):"No readings yet"}</div>${d&&d.sum.c.length?`<ul>${d.sum.c.map(x=>`<li class="${x.s}"><span style="color:#b8c5e6">${esc(x.t)}</span></li>`).join("")}</ul>`:d?`<p class="cmsum" style="margin-top:8px">No concerns in the last check.</p>`:""}<div class="cmb"><button class="btn p" type="button" data-a="measure" data-id="${c.id}">Measure</button>${d?`<button class="btn" type="button" data-a="view" data-id="${c.id}">View report</button>`:""}</div></div>`}).join("")}</div>`;
+const cta=$("#cta");if(cta)cta.textContent="Start full-body measurement · "+CUR.name}
+$("#crewbox").addEventListener("click",e=>{const btn=e.target.closest("button[data-a]"),card=e.target.closest(".cm");if(!card)return;const id=(btn||card).dataset.id;
+if(btn){e.stopPropagation();if(id!==CUR.id)setCrew(id);if(btn.dataset.a==="measure")startMeasure();else{homeY=scrollY;results()}}else if(id!==CUR.id)setCrew(id)});
+/* ---------- what the checker predicted ---------- */
+function predBox(){const b=$("#pred");if(!b)return;
+const by={};for(const rep of(AX.reports||[]))for(const f of(rep.findings||[]))by[rep.group+"|"+f.indicator]=f;
+const TYPE={nasa_rule:"NASA-linked rule",nasa_reference:"NASA reference values",nasa_context:"Landing-day groups",nasa_delta:"Versus your preflight",personal_baseline:"Your own past days",window_rule:"Multi-day pattern",uncited_default:"General medical rule (not NASA)",your_label:"Your own label",input_check:"Input check",note:"Needs more data"};
+const cnt={ref:0,rule:0,base:0,wait:0,app:0,gen:0};
+const areas=AREAS.map(([z,nm])=>{const rows=ZN[z].ms.map(k=>{const r=R[k],s=mst(k),bk=BK[k],f=bk?by[bk[0]+"|"+bk[1]]:null;let checks="";
+if(f){const notes=[];for(const x of(f.reasons||[])){if(x.type==="note"&&x.status!=="no_reference"){notes.push(x.message);continue}
+if(x.type==="nasa_reference")cnt.ref++;else if(x.type==="nasa_rule"||x.type==="window_rule"||x.type==="nasa_delta"||x.type==="nasa_context")cnt.rule++;else if(x.type==="personal_baseline")cnt.base++;else if(x.type==="note")cnt.wait++;else if(x.type==="uncited_default")cnt.gen++;
+const st=RANK[x.status]!==undefined?x.status:"";let ex="";
+if(x.type==="nasa_reference"&&x.z!=null)ex=`<span class="chip">z ${x.z>0?"+":""}${x.z}</span><span class="chip">${x.percentile}th percentile</span>`;
+if(x.type==="personal_baseline"&&x.baseline){const bl=x.baseline,sc=SC[k]||1;ex=`<span class="chip">last ${bl.days} days: ${fmt(bl.mean*sc)} ± ${fmt(bl.sd*sc)}</span><span class="chip">z ${bl.z>0?"+":""}${bl.z}</span>`}
+checks+=`<div class="pd-c"><div class="pd-t"><span class="tg">${esc(TYPE[x.type]||x.type)}</span><span class="chip ${st}">${st?LAB[st]:"Waiting"}</span>${ex}</div><p>${esc(x.message)}</p></div>`}
+if(notes.length)checks+=`<details class="pd-n"><summary>More context (${notes.length})</summary>${notes.map(n=>`<p>${esc(n)}</p>`).join("")}</details>`}
+else{cnt.app++;checks=`<div class="pd-c"><div class="pd-t"><span class="tg">App's simple range, not NASA</span><span class="chip ${s}">${LAB[s]}</span></div><p>Expected ${r.n[0]} to ${r.n[1]} ${esc(r.unit)}. You entered ${V[k]}.</p></div>`}
+const p=P(k);
+return `<div class="pd-r"><div class="pd-h"><b>${esc(r.name)}</b><span class="mono">${V[k]} ${esc(r.unit)}</span><span class="chip ${s}">${vd(k)}</span></div><div class="pd-p"><b>Predicted:</b> ${esc(p.h)}.</div>${checks}</div>`}).join("");
+return `<div class="pd-a"><b>${nm}</b> <span class="chip ${zst(z)}">${LAB[zst(z)]}</span>${rows}</div>`}).join("");
+const comp=compList(),notices=(AX.reports||[]).flatMap(r=>r.notices||[]),unrec=(AX.reports||[]).flatMap(r=>r.unrecognized_fields||[]);
+const worst=Object.keys(ZN).reduce((a,z)=>RANK[zst(z)]>RANK[a]?zst(z):a,"ok");
+b.innerHTML=`<h3>What was predicted</h3><p style="margin:0 0 6px;color:var(--mute);font-size:13px">For ${esc(CUR.name)}. Each reading was compared with something, and the result below is what that comparison predicts.</p>`
++(AX.ok?"":`<div class="esc" style="margin:8px 0">The NASA-based checker was not reached, so only the app's simple ranges were used.</div>`)
++`<ul class="pd-int"><li>Your overall status today: <b class="${worst}">${LAB[worst]}</b>, built from five body areas.</li>`
++(cnt.ref+cnt.rule?`<li>${cnt.ref+cnt.rule} check${cnt.ref+cnt.rule>1?"s":""} against NASA-linked rules or reference values (does this reading fit what crew typically show?).</li>`:"")
++(cnt.base?`<li>${cnt.base} check${cnt.base>1?"s":""} against your own last 7 days (is this unusual for you?).</li>`:"")
++(cnt.wait?`<li>${cnt.wait} reading${cnt.wait>1?"s":""} waiting for 5 days of history before a personal prediction is possible.</li>`:"")
++(cnt.gen?`<li>${cnt.gen} general medical rule${cnt.gen>1?"s":""} that NASA does not define.</li>`:"")
++(cnt.app?`<li>${cnt.app} reading${cnt.app>1?"s":""} judged by the app's simple built-in ranges (no NASA rule exists).</li>`:"")
++(comp.length?`<li>${comp.length} combined pattern${comp.length>1?"s":""} across readings, such as short sleep together with slower reactions.</li>`:"")+`</ul>`
++areas
++(comp.length?`<div class="pd-a"><b>Combined patterns</b>${comp.map(c=>`<div class="pd-r"><div class="pd-t"><span class="tg">Several readings together</span><span class="chip ${c.status}">${LAB[c.status]}</span></div><p class="pd-p">${esc(COMP.h)}</p><p style="margin:0;font-size:13px;color:#b8c5e6">${esc(c.message)}</p></div>`).join("")}</div>`:"")
++(notices.length?`<div class="pd-a"><b>Extra notices</b>${notices.map(n=>`<p class="pd-f">${esc(n)}</p>`).join("")}</div>`:"")
++(unrec.length?`<p class="pd-f">Not recognized by the checker: ${unrec.map(esc).join(", ")}</p>`:"")
++`<p class="pd-f">z is how many standard deviations a value sits from the reference; the percentile is where it falls among typical values. These are statistical comparisons, not diagnoses.</p>`}
+renderCrew();
 document.querySelectorAll("#fwrap .zone").forEach(e=>{e.onclick=()=>pick(e.dataset.zone);e.onkeydown=ev=>{if(ev.key==="Enter"||ev.key===" "){ev.preventDefault();pick(e.dataset.zone)}}});
-$("#cta").onclick=startMeasure;$("#startnav").onclick=startMeasure;$("#hbtn").onclick=goHome;$("#brand").onclick=goHome;$("#again").onclick=startMeasure;$("#home2").onclick=goHome;
-if(location.hash==="#results"){try{const s=JSON.parse(sessionStorage.astraV||"null");if(s){Object.assign(V,s);const sa=JSON.parse(sessionStorage.astraA||"null");if(sa){Object.assign(A,sa.A);Object.assign(ZO,sa.ZO);Object.assign(AX,sa.AX)}results()}}catch(e){}history.replaceState(null,"",location.pathname+location.search)}
+const on=(q,f)=>{const e=$(q);if(e)e.onclick=f};on("#cta",startMeasure);on("#startnav",startMeasure);on("#hbtn",goHome);on("#brand",goHome);on("#again",startMeasure);on("#home2",goHome);
+if(location.hash==="#results"){try{const w=sessionStorage.astraWho;if(w)CUR=CREW.find(c=>c.id===w)||CUR;renderCrew();const s=JSON.parse(sessionStorage.astraV||"null");if(s){Object.assign(V,s);const sa=JSON.parse(sessionStorage.astraA||"null");if(sa){Object.assign(A,sa.A);Object.assign(ZO,sa.ZO);Object.assign(AX,sa.AX)}results()}}catch(e){}history.replaceState(null,"",location.pathname+location.search)}
 addEventListener("resize",layout);layout();frame();
 </script>
 <script src="exercise-links.js"></script></body></html>
