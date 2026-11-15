@@ -942,6 +942,11 @@ def make_app():
         return [{"group": g, "indicator": i, "day": r["day"], "phase": r["detail_phase"], "posture": r["posture"] or None, "value": r["value"]}
                 for (g, i), rows in sorted(S.items()) if (not group or g == group) and (not indicator or i == indicator) for r in rows]
 
+    ui = os.path.join(HERE, "astra-frontend")
+    if os.path.isdir(ui):                       # open http://127.0.0.1:8000/ui/ : page and API share one origin
+        from fastapi.staticfiles import StaticFiles
+        app.mount("/ui", StaticFiles(directory=ui, html=True), name="ui")
+
     return app
 
 
